@@ -7,8 +7,6 @@ const Options = ({
   resetButton,
   totalFeedback,
 }) => {
-  console.log("resetFeedback:", resetFeedback);
-  console.log("totalFeedback:", totalFeedback);
   return (
     <ul className={css.optionList}>
       <li>
