@@ -6,19 +6,18 @@ import Notification from "./components/Notification";
 import { useState, useEffect } from "react";
 
 function App() {
-  const typeRewiews = {
+  const typeReviews = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
-
 
   const [values, setValues] = useState(() => {
     const savedValues = window.localStorage.getItem("saved-values");
     if (savedValues !== null) {
       return JSON.parse(savedValues);
     }
-    return typeRewiews;
+    return typeReviews;
   });
 
   useEffect(() => {
@@ -37,15 +36,15 @@ function App() {
     });
   };
 
-  const resetFeedbackButton = () => setValues(typeRewiews);
-
+  const resetFeedback = () => setValues(typeReviews);
   return (
     <section>
       <Description />
       <Options
         onClickFeedback={(feedbackType) => updateFeedback(feedbackType)}
         resetFeedback={totalFeedback >= 1}
-        resetButton={resetFeedbackButton}
+        resetButton={resetFeedback}
+        totalFeedback={totalFeedback}
       />
       {totalFeedback >= 1 && (
         <Feedback

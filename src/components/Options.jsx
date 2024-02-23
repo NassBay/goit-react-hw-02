@@ -1,7 +1,14 @@
 import PropTypes from "prop-types";
 import css from "./Options.module.css";
 
-const Options = ({ onClickFeedback, resetFeedback, resetButton }) => {
+const Options = ({
+  onClickFeedback,
+  resetFeedback,
+  resetButton,
+  totalFeedback,
+}) => {
+  console.log("resetFeedback:", resetFeedback);
+  console.log("totalFeedback:", totalFeedback);
   return (
     <ul className={css.optionList}>
       <li>
@@ -29,9 +36,11 @@ const Options = ({ onClickFeedback, resetFeedback, resetButton }) => {
         </button>
       </li>
       <li>
-        <button onClick={resetButton} className={css.optionButton}>
-          Reset
-        </button>
+        {resetFeedback && totalFeedback > 0 && (
+          <button onClick={resetButton} className={css.optionButton}>
+            Reset
+          </button>
+        )}
       </li>
     </ul>
   );
@@ -39,8 +48,9 @@ const Options = ({ onClickFeedback, resetFeedback, resetButton }) => {
 
 export default Options;
 
-Options.protoType = {
+Options.propTypes = {
   onClickFeedback: PropTypes.func,
   resetFeedback: PropTypes.bool,
   resetButton: PropTypes.func,
+  totalFeedback: PropTypes.number,
 };
