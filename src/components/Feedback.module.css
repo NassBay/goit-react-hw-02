@@ -1,0 +1,8 @@
+.feedbackBox{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.feedbackText {
+color: rgb(74, 74, 74);
+}

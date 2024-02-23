@@ -1,0 +1,19 @@
+.optionList {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.optionButton {
+    background-color: rgb(235, 235, 235);
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.optionButton:hover {
+   box-shadow: none;
+   background-color: rgb(192, 192, 192); 
+}
